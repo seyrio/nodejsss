@@ -45,10 +45,6 @@ app.get("/", isAuthenticated, (req, res) => {
   res.render("logout", { name: req.user.name });
 });
 
-app.get("/success", (req, res) => {
-  res.render("success");
-});
-
 app.get("/logout", (req, res) => {
   res.cookie("token", null, {
     expires: new Date(Date.now()),
